@@ -1,0 +1,28 @@
+.library-page {
+  padding: 2rem;
+  color: white;
+  background: #111;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.movie-card {
+  background: #222;
+  padding: 0.5rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.movie-card img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.movie-card h4 {
+  margin: 0.5rem 0;
+}

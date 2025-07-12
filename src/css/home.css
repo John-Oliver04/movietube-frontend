@@ -84,9 +84,10 @@ body {
 .movie-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 1.5rem;
+  gap: 1rem;
   margin-top: 1rem;
-}
+  padding: 0.5rem;
+} 
 
 .movie-card {
   display: flex;
@@ -97,7 +98,8 @@ body {
   overflow: hidden;
   transition: transform 0.3s;
   text-align: center;
-  height: 100%; /* ensure consistent height */
+  height: 98%; /* ensure consistent height */
+  
 }
 
 .movie-info {
@@ -136,11 +138,12 @@ body {
   color: #ffc107;
 }
 
-.stars-container {
+.stars-container .subtitle-container {
   display: flex;
   justify-content: left;
-  align-items: center;
+  align-items: left;
   gap: 0.25rem;
+
 }
 
 .vote {

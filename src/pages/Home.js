@@ -39,69 +39,88 @@ const HomePage = () => {
     <div className="homepage">
       {/* Navbar */}
       <header className="navbar">
-        <div className="logo">🎬 MovieZone</div>
+        <div className="logo">🎬 MovieTube</div>
         <nav className="nav-links">
           <a href="/">Home</a>
           <a href="/favorites">Favorites</a>
           <a href="/search">Search</a>
-          <label style={{marginLeft:'20px'}}> | </label>
+          <span className="divider">|</span>
           <a href="/signup">Signup</a>
           <a href="/login">Login</a>
         </nav>
       </header>
 
-      {/* Carousel Hero Section */}
-        <section className="carousel-hero">
-            <Slider {...settings}>
-                {movies.slice(0, 5).map((movie) => (
-                <div key={movie.id} className="carousel-slide">
-                    <div
-                    className="carousel-background"
-                    style={{
-                        backgroundImage: `url(https://image.tmdb.org/t/p/original${movie.backdrop_path})`,
-                    }}
-                    >
-                    <div className="carousel-overlay">
-                        <h1>{movie.title}</h1>
-                        <p>{movie.overview.substring(0, 150)}...</p>
-                    </div>
-                    </div>
+      {/* Carousel Hero */}
+      <section className="carousel-hero">
+        <Slider {...settings}>
+          {movies.slice(0, 5).map((movie) => (
+            <div key={movie.id} className="carousel-slide">
+              <div
+                className="carousel-background"
+                style={{
+                  backgroundImage: `url(https://image.tmdb.org/t/p/original${movie.backdrop_path})`,
+                }}
+              >
+                <div className="carousel-overlay">
+                  <h1>{movie.title}</h1>
+                  <p>{movie.overview.substring(0, 150)}...</p>
                 </div>
-                ))}
-            </Slider>
-        </section>
+              </div>
+            </div>
+          ))}
+        </Slider>
+      </section>
 
       {/* Popular Movies Grid */}
-        <div className="content">
-            <h2>Popular Movies</h2>
-            <div className="movie-grid">
-                {movies.map((movie) => (
-                <div className="movie-card" key={movie.id}>
-                    <img
-                    src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-                    alt={movie.title}
-                    />
-                    <div className="movie-info">
-                    {/* Stars */}
-                    <div className="stars">
-                        {Array.from({ length: 5 }, (_, i) => (
-                        <span key={i} style={{ color: i < Math.round(movie.vote_average / 2) ? '#ffc107' : '#555' }}>★</span>
-                        ))}
-                        <span className="vote"> ({movie.vote_average.toFixed(1)})</span>
-                    </div>
-                    <h3>{movie.title}</h3>
-                    <p className="subtitle">{movie.release_date} • {movie.original_language.toUpperCase()}</p>
-
-
-
-                    {/* Watch Button */}
-                    <button className="watch-btn">▶ Watch</button>
-                    </div>
+      <div className="content">
+        <h2>Popular Movies</h2>
+        <div className="movie-grid">
+          {movies.map((movie) => (
+            <div className="movie-card" key={movie.id}>
+              <img
+                src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                alt={movie.title || 'Movie Poster'}
+              />
+              <div className="movie-info">
+                {/* Stars */}
+                <div className="stars-container">
+                  <div className="stars">
+                    {Array.from({ length: 5 }, (_, i) => (
+                      <span
+                        key={i}
+                        style={{
+                          color:
+                            i < Math.round(movie.vote_average / 2)
+                              ? '#ffc107'
+                              : '#555',
+                        }}
+                      >
+                        ★
+                      </span>
+                    ))}
+                    <span className="vote">
+                      ({movie.vote_average.toFixed(1)})
+                    </span>
+                  </div>
                 </div>
-                ))}
-            </div>
-        </div>
 
+                {/* Subtitle & Title */}
+                <div className="subtitle-container">
+                  <p className="subtitle">
+                    {movie.release_date} •{' '}
+                    {movie.original_language.toUpperCase()}
+                  </p>
+                </div>
+
+                <h3>{movie.title}</h3>
+
+                {/* Watch Button */}
+                <button className="watch-btn">▶ Watch</button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
