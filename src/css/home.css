@@ -1,0 +1,169 @@
+/* ===== General Reset ===== */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #111;
+  color: #fff;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #000;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links a {
+  margin-left: 1.5rem;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: #ff3c00;
+}
+
+.divider {
+  margin-left: 20px;
+}
+
+/* ===== Carousel Hero ===== */
+.carousel-hero {
+  margin-top: 0.1rem;
+}
+
+.carousel-slide {
+  position: relative;
+  height: 80vh;
+}
+
+.carousel-background {
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  position: relative;
+}
+
+.carousel-overlay {
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 2rem;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  max-height: 100%;
+}
+
+.carousel-overlay h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.carousel-overlay p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* ===== Page Content ===== */
+.content {
+  padding: 2rem;
+}
+
+/* ===== Movie Grid ===== */
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.movie-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* push bottom items */
+  background-color: #1c1c1c;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s;
+  text-align: center;
+  height: 100%; /* ensure consistent height */
+}
+
+.movie-info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+
+
+.movie-card:hover {
+  transform: scale(1.05);
+}
+
+.movie-card img {
+  width: 100%;
+  display: block;
+}
+
+.movie-card h3 {
+  font-size: 1rem;
+  margin: 0.5rem 0 0.25rem 0;
+}
+
+
+/* ===== Movie Details ===== */
+.subtitle {
+  font-size: 0.75rem;
+  color: #aaa;
+  margin: 0.25rem 0;
+}
+
+.stars {
+  font-size: 1rem;
+  color: #ffc107;
+}
+
+.stars-container {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.vote {
+  color: #ccc;
+  font-size: 0.85rem;
+  margin-left: 0.25rem;
+}
+
+/* ===== Watch Button ===== */
+.watch-btn {
+  padding: 0.5rem 1rem;
+  background-color: #ff3c00;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.watch-btn:hover {
+  background-color: #e03100;
+}
+
+/* divider */
+
