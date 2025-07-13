@@ -1,27 +1,30 @@
-import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 const Login = () => {
   const [form, setForm] = useState({ username: '', password: '' });
-  const [message, setMessage] = useState('');
+  const navigate = useNavigate();
 
   const handleLogin = async () => {
     try {
       const res = await axios.post('http://localhost:8080/api/auth/login', form);
-      setMessage(res.data);
+      localStorage.setItem('token', res.data.token);
+      console.log("Login successful, redirecting...");
+
+      navigate('/library');
     } catch (err) {
-      setMessage(err.response.data);
+      console.error('Login error:', err);
+      alert('Invalid login: ' + (err.response?.data?.message || err.message));
     }
   };
 
   return (
-    <div>
-      <h2>Login</h2>
-      <input placeholder="Username" onChange={e => setForm({...form, username: e.target.value})} />
-      <input type="password" placeholder="Password" onChange={e => setForm({...form, password: e.target.value})} />
+    <>
+      <input onChange={e => setForm({ ...form, username: e.target.value })} placeholder="Username" />
+      <input type="password" onChange={e => setForm({ ...form, password: e.target.value })} placeholder="Password" />
       <button onClick={handleLogin}>Login</button>
-      <p>{message}</p>
-    </div>
+    </>
   );
 };
 

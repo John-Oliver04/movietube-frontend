@@ -8,7 +8,7 @@ import Library from './pages/Library';
 
 function App() {
 
-  const isLoggedIn = !!localStorage.getItem('loggedInUser');
+  const isLoggedIn = !!localStorage.getItem('token');
 
   return ( 
     <div className="App">
@@ -17,8 +17,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/library" element={isLoggedIn ? <Library /> : <Navigate to="/login" />}
-/>
+          <Route path="/library" element={isLoggedIn ? <Library /> : <Navigate to="/login" />} />
         </Routes>
       </Router>
     </div>
