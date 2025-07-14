@@ -1,7 +1,10 @@
 # 🎥 MovieTube Frontend
 
 The frontend of **MovieTube**, a full-stack movie streaming web application built using **React**, **TMDB API**, and **React Router**. This connects to the Spring Boot backend for user authentication, watchlist, and favorites.
-
+```
+BACKEND LINK
+https://github.com/John-Oliver04/movietube-backend
+```
 ---
 
 ## ✨ Features
