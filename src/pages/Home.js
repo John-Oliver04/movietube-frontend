@@ -7,7 +7,7 @@ import 'slick-carousel/slick/slick-theme.css';
 
 const HomePage = () => {
   const [movies, setMovies] = useState([]);
-  const apiKey = '4116b085e5a70d602764e151492abeb4';
+  const apiKey = process.env.REACT_APP_TMDB_API_KEY;
 
   useEffect(() => {
     const fetchPopularMovies = async () => {
