@@ -1,70 +1,124 @@
-# Getting Started with Create React App
+# 🎥 MovieTube Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The frontend of **MovieTube**, a full-stack movie streaming web application built using **React**, **TMDB API**, and **React Router**. This connects to the Spring Boot backend for user authentication, watchlist, and favorites.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## ✨ Features
 
-### `npm start`
+- 🔐 Login & Signup with JWT
+- 📃 Home page with trending & popular movies from TMDB
+- ⭐ Add to Favorites & ⏳ Watchlist
+- 🎬 Movie posters, ratings, subtitles, and watch buttons
+- 🧭 Route protection (e.g. /library only for logged-in users)
+- 🎠 Carousel Hero design
+- 🧑 Avatar + Logout after login
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## ⚙ Tech Stack
 
-### `npm test`
+- ⚛️ React
+- 🌐 Axios
+- 🔀 React Router DOM
+- 📦 TMDB API
+- 🎨 CSS (custom + responsive)
+- 🔐 JWT (token stored in localStorage)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🚀 Getting Started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 1. Clone the Repository
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+git clone https://github.com/your-username/movie-frontend.git
+cd movie-frontend
+```
+###2. Install Dependencies
+```
+npm install
+```
+###3. Add Environment Variable
+Create a .env file in the root of your React project:
+```
+env
+REACT_APP_TMDB_API_KEY=your_tmdb_api_key
+✅ Also add this to .gitignore:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+gitignore
+.env
+```
+###4. Run the App
+```
+npm start
+The app will start on: http://localhost:3000
 
-### `npm run eject`
+🔌 Connect to Backend
+The frontend communicates with your Spring Boot backend at:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+http://localhost:8080/api/auth/
+```
+####Make sure your backend is running for login and library pages to work.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+📂 Folder Structure
+```
+pgsql
+Copy
+Edit
+src/
+ ├── components/
+ │   └── Navbar, MovieCard, CarouselHero, etc.
+ ├── pages/
+ │   ├── Home.js
+ │   ├── Login.js
+ │   ├── Signup.js
+ │   └── Library.js
+ ├── App.js
+ ├── App.css
+ └── index.js
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+ ```
+🔐 Token-Based Auth Flow
+```
+On login, JWT token is stored in localStorage
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+/library is protected: redirects to /login if no token
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+Authorization: Bearer <token> is sent on requests to backend
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+💡 Roadmap Ideas
+```
+✅ Movie detail page
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+✅ Watch trailer feature (YouTube popup)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+🔜 User profile & history
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+🔜 Search & filter
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+🔜 Pagination or infinite scroll
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+🤝 License
+This project is for learning and portfolio purposes. You're welcome to fork or extend it.
+
+
+
+👩‍💻 Author
+```
+Built by John Oliver Virola
+
+📧 [Johnolivervirola4@gmail.com]
+
+🔗 [[Portfolio | LinkedIn | GitHub](https://www.linkedin.com/in/john-oliver-virola-309315285/)]
+```
